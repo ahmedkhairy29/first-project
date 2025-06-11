@@ -20,8 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call([
         AdminSeeder::class,
-        DewaniyaCategorySeeder::class,
-        DewaniyaSubCategorySeeder::class,
+        UserSeeder::class,
     ]);
     }
 }
