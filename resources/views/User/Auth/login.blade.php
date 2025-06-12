@@ -149,7 +149,12 @@
         <!-- Left: Form -->
         <div class="left-panel">
             <div class="login-container">
-                <div class="login-logo">Matsync</div>
+                <div class="login-logo">
+                    <div class="d-flex align-items-center mb-4">
+    <img src="{{ asset('images/logo.png') }}" alt="Matsync Logo" style="height: 40px; width: auto;">
+    <span class="ms-0.5 fw-bold fs-5 text-dark">Matsync</span>
+</div>
+                </div>
                 <h2>Welcome Back!</h2>
                 <p>Sign in to continue to Minia.</p>
 
