@@ -23,8 +23,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('dewaniya_sub_categories', DewaniyaSubCategoryController::class);
 
         Route::get('/dashboard', function () {
-            return view('dashboard');
+            return view('admin.dashboard');
         })->name('dashboard');
+
+     
     });
 });
 
