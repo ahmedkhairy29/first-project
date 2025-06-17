@@ -26,7 +26,7 @@
         }
 
         .auth-left {
-            flex: 1;
+            flex: 1.2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -46,6 +46,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.05);
             min-height: 550px;
             margin-bottom: 1.5rem;
+            font-size: 0.875rem;
         }
 
         .logo {
