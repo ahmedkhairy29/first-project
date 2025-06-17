@@ -5,7 +5,7 @@
     <title>Dashboard | Matsync</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap + Icons -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
@@ -16,7 +16,7 @@
             background-color: transparent;
         }
 
-        /* Sidebar */
+        
         .sidebar {
             position: fixed;
             top: 0;
@@ -84,7 +84,7 @@
 
               
 
-        /* Main content */
+        
         .main-content {
             margin-left: 260px;
             padding-top: 56px;
@@ -95,7 +95,7 @@
             margin-left: 70px;
         }
 
-        /* زر الهامبرجر */
+        
         .hamburger-btn {
             background-color: transparent;
             border: none;
@@ -141,7 +141,7 @@
             display: none !important;
         }
 
-        /* Navbar */
+        
         .navbar {
             height: 56px;
         }   
@@ -201,7 +201,7 @@
 
 <body>
 
-<!-- Sidebar -->
+
 <div id="sidebar" class="sidebar collapsed">
     <div class="sidebar-header">
         <div class="d-flex align-items-center">
@@ -209,7 +209,7 @@
             <span class="logo-text ms-2">Matsync</span>
         </div>
 
-        <!-- زر داخل السايدبار -->
+        
         <button id="toggleBtn" class="hamburger-btn hamburger-inside" onclick="toggleSidebar()">
             <i id="toggleIcon" class="bi bi-list"></i>
         </button>
@@ -224,14 +224,14 @@
     <a href="#" class="nav-link"><i class="bi bi-gear"></i> <span>About Us</span></a>
 </div>
 
-<!-- زر الهامبرجر خارج السايدبار -->
+
 <button class="hamburger-btn hamburger-fixed" onclick="toggleSidebar()">
     <i id="toggleIconFixed" class="bi bi-list"></i>
 </button>
 
-<!-- Main Content -->
+
 <div id="main" class="main-content collapsed">
-    <!-- Navbar -->
+    
     <nav class="navbar bg-white shadow-sm px-3 d-flex justify-content-end align-items-center fixed-top" style="left: 70px; right: 0; z-index: 1030;">
         <div class="d-flex align-items-center dropdown">
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle px-3 py-2 bg-light rounded shadow-sm"
@@ -255,7 +255,7 @@
     
     
     <div class="dashboard-boxes">
-        <!-- Users Box -->
+        
         <div class="dashboard-box">
             <div class="box-icon">
                 
@@ -265,7 +265,7 @@
            
         </div>
         
-        <!-- Packages Box -->
+        
         <div class="dashboard-box">
             <div class="box-icon">
                 
@@ -275,7 +275,7 @@
             
         </div>
         
-        <!-- Services Box -->
+        
         <div class="dashboard-box">
             <div class="box-icon">
                 
@@ -287,16 +287,16 @@
         
         
     
-    <!-- You can add more content below the boxes -->
+   
 </div>
 
-    <!-- المحتوى الداخلي -->
+    
     <main class="p-4 mt-5">
         @yield('content')
     </main>
 </div>
 
-<!-- Scripts -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     function toggleSidebar() {
@@ -313,7 +313,7 @@
         fixedIcon.className = isCollapsed ? 'bi bi-list' : 'bi bi-list';
     }
 
-    // ابدأ بحالة السايدبار مغلقة
+    
     window.addEventListener('load', function () {
         document.getElementById('sidebar').classList.add('collapsed');
         document.getElementById('main').classList.add('collapsed');
