@@ -1,29 +1,24 @@
-<!-- resources/views/partials/sidebar.blade.php -->
-<nav class="d-flex flex-column bg-dark text-white vh-100 p-3" style="width: 250px;">
-    <div class="mb-4">
-        <h4 class="text-white">Admin Panel</h4>
+<div id="sidebar" class="sidebar collapsed">
+    <div class="sidebar-header">
+        <div class="d-flex align-items-center">
+            <img src="{{ asset('images/logo3.png') }}" alt="Logo" style="height: 15px;">
+            <span class="logo-text ms-2">Matsync</span>
+        </div>
+
+        <button id="toggleBtn" class="hamburger-btn hamburger-inside" onclick="toggleSidebar()">
+            <i id="toggleIcon" class="bi bi-list"></i>
+        </button>
     </div>
 
-    <ul class="nav nav-pills flex-column mb-auto">
-        <li class="nav-item">
-            <a href="{{ route('admin.dashboard') }}" class="nav-link text-white {{ request()->routeIs('admin.dashboard') ? 'active bg-primary' : '' }}">
-                <i class="bi bi-speedometer2 me-2"></i> Dashboard
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('admin.dewaniya_categories.index') }}" class="nav-link text-white {{ request()->routeIs('admin.dewaniya_categories.*') ? 'active bg-primary' : '' }}">
-                <i class="bi bi-collection me-2"></i> Main Categories
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('admin.dewaniya_sub_categories.index') }}" class="nav-link text-white {{ request()->routeIs('admin.dewaniya_sub_categories.*') ? 'active bg-primary' : '' }}">
-                <i class="bi bi-list-ul me-2"></i> Sub Categories
-            </a>
-        </li>
-        <li>
-            <a href="{{ route('admin.logout') }}" class="nav-link text-white">
-                <i class="bi bi-box-arrow-right me-2"></i> Logout
-            </a>
-        </li>
-    </ul>
-</nav>
+    <div class="menu-title">Menu</div>
+    <a href="#" class="nav-link"><i class="bi bi-house"></i> <span>Dashboard</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-person"></i> <span>Users</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-grid"></i> <span>Packages</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-menu-button-wide"></i> <span>Services</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-telephone"></i> <span>Contact Us</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-gear"></i> <span>About Us</span></a>
+</div>
+
+<button class="hamburger-btn hamburger-fixed" onclick="toggleSidebar()">
+    <i id="toggleIconFixed" class="bi bi-list"></i>
+</button>
