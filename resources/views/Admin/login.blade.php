@@ -187,7 +187,7 @@
     </div>
 </div>
 
-<!-- Toggle Password JS -->
+
 <script>
     function togglePassword() {
         const password = document.getElementById('password');

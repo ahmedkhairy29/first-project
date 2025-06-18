@@ -11,7 +11,7 @@ class AdminRegisterController extends Controller
 {
     public function showRegisterForm()
     {
-        return view('admin.auth.register');
+        return view('admin.register');
     }
 
     public function register(Request $request)
