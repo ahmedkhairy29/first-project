@@ -1,9 +1,9 @@
-<div id="sidebar" class="sidebar collapsed">
-    <div class="sidebar-header">
-        <div class="d-flex align-items-center">
-            <img src="{{ asset('images/logo3.png') }}" alt="Logo" style="height: 15px;">
-            <span class="logo-text ms-2">Matsync</span>
-        </div>
+<div class="sidebar-header d-flex flex-column align-items-center justify-content-center" style="height: 100px;">
+    <div class="d-flex align-items-center">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo" style="height: 30px;">
+        <span class="logo-text ms-2">Matsync</span>
+    </div>
+</div>
 
         <button id="toggleBtn" class="hamburger-btn hamburger-inside" onclick="toggleSidebar()">
             <i id="toggleIcon" class="bi bi-list"></i>

@@ -16,7 +16,7 @@ a {
     left: 0;
     height: 100%;
     width: 260px;
-    background-color: #ffffff;
+    background-color: #f3f1f1;
     border-right: 1px solid #dee2e6;
     transition: width 0.3s ease;
     overflow-x: hidden;
@@ -32,12 +32,14 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+    margin-bottom: 20px;
+    background-color: #f3f1f1;
 }
 
 .sidebar-header img {
-    height: 20px;
+    background-color: transparent !important;
+    border: none;
 }
-
 .logo-text {
     font-weight: bold;
     font-size: 1rem;
@@ -133,6 +135,14 @@ a {
 
 .navbar {
     height: 56px;
+}
+
+.navbar.collapsed {
+    left: 70px !important;
+}
+
+.navbar.expanded {
+    left: 260px !important;
 }
 
 
