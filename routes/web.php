@@ -21,11 +21,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('auth:admin')->group(function () {
         Route::resource('dewaniya_categories', DewaniyaCategoryController::class);
         Route::resource('dewaniya_sub_categories', DewaniyaSubCategoryController::class);
+        Route::resource('users', \App\Http\Controllers\Admin\UserController::class);
 
-        Route::get('/dashboard', function () {
-            return view('admin.dashboard');
-        })->name('dashboard');
+        
+        Route::get('/dashboard', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
 
+        
      
     });
 });

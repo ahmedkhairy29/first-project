@@ -7,7 +7,9 @@
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
@@ -23,20 +25,22 @@
         </div>
 
         <button id="toggleBtn" class="hamburger-btn hamburger-inside" onclick="toggleSidebar()">
-            <i id="toggleIcon" class="mdi mdi-menu"></i>
+            <i id="toggleIcon" class="bi bi-list"></i>
         </button>
     </div>
 
     <div class="menu-title">Menu</div>
-    <a href="#" class="nav-link"><i class="mdi mdi-view-dashboard-outline"></i> <span>Dashboard</span></a>
-    <a href="#" class="nav-link"><i class="mdi mdi-account"></i> <span>Users</span></a>
-    <a href="#" class="nav-link"><i class="mdi mdi-package-variant-closed"></i> <span>Packages</span></a>
-    <a href="#" class="nav-link"><i class="mdi mdi-briefcase-outline"></i> <span>Services</span></a>
+    <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="bi bi-house-door"></i> <span>Dashboard</span></a>
+    <a href="{{ route('admin.users.index') }}" class="nav-link"><i class="bi bi-people"></i> <span>Users</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-box-seam"></i> <span>Packages</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-briefcase"></i> <span>Services</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-telephone"></i> <span>Contact Us</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-gear"></i> <span>About Us</span></a>
 </div>
 
 <!-- Hamburger when sidebar is collapsed -->
 <button class="hamburger-btn hamburger-fixed" onclick="toggleSidebar()">
-    <i id="toggleIconFixed" class="mdi mdi-menu"></i>
+    <i id="toggleIconFixed" class="bi bi-list"></i>
 </button>
 
 <!-- Main Content Area -->
@@ -55,7 +59,7 @@
                     <form method="POST" action="{{ route('admin.logout') }}">
                         @csrf
                         <button class="dropdown-item d-flex align-items-center">
-                            <i class="mdi mdi-logout me-2"></i> Logout
+                            <i class="bi bi-box-arrow-right me-2"></i> Logout
                         </button>
                     </form>
                 </li>
