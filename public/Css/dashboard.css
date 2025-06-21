@@ -193,3 +193,14 @@ a {
     padding-top: 10px;
     margin-top: 10px;
 }
+.sort-icons {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 5px;
+    font-size: 10px;
+    cursor: pointer;
+    line-height: 1;
+}
+.sort-icons i {
+    height: 10px;
+}

@@ -10,13 +10,14 @@
     <span>Users</span>
 </a>
 
-<a href="#" class="nav-link">
+<a href="{{ route('admin.packages.index') }}" class="nav-link">
     <i class="bi bi-box-seam"></i>
     <span>Packages</span>
 </a>
 
+
 <a href="#" class="nav-link">
-    <i class="bi bi-briefcase"></i>
+    <i class="bi bi-list"></i>
     <span>Services</span>
 </a>
 

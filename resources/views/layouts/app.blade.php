@@ -5,18 +5,18 @@
     <title>@yield('title', 'Matsync')</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Bootstrap 5 -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap Icons -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Custom CSS -->
+    
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet">
 </head>
 <body>
 
-<!-- Sidebar -->
+
 <div id="sidebar" class="sidebar collapsed">
     <div class="sidebar-header">
         <div class="d-flex align-items-center">
@@ -32,21 +32,21 @@
     <div class="menu-title">Menu</div>
     <a href="{{ route('admin.dashboard') }}" class="nav-link"><i class="bi bi-house-door"></i> <span>Dashboard</span></a>
     <a href="{{ route('admin.users.index') }}" class="nav-link"><i class="bi bi-people"></i> <span>Users</span></a>
-    <a href="#" class="nav-link"><i class="bi bi-box-seam"></i> <span>Packages</span></a>
-    <a href="#" class="nav-link"><i class="bi bi-briefcase"></i> <span>Services</span></a>
+    <a href="{{ route('admin.packages.index') }}" class="nav-link"><i class="bi bi-box-seam"></i><span>Packages</span></a>
+    <a href="#" class="nav-link"><i class="bi bi-list"></i> <span>Services</span></a>
     <a href="#" class="nav-link"><i class="bi bi-telephone"></i> <span>Contact Us</span></a>
     <a href="#" class="nav-link"><i class="bi bi-gear"></i> <span>About Us</span></a>
 </div>
 
-<!-- Hamburger when sidebar is collapsed -->
+
 <button class="hamburger-btn hamburger-fixed" onclick="toggleSidebar()">
     <i id="toggleIconFixed" class="bi bi-list"></i>
 </button>
 
-<!-- Main Content Area -->
+
 <div id="main" class="main-content collapsed">
 
-    <!-- Navbar -->
+    
     <nav class="navbar bg-white shadow-sm px-3 d-flex justify-content-end align-items-center fixed-top collapsed" style="right: 0; z-index: 1030;">
         <div class="d-flex align-items-center dropdown">
             <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle px-3 py-2 bg-light rounded shadow-sm"
@@ -67,16 +67,16 @@
         </div>
     </nav>
 
-    <!-- Content -->
+    
     <div class="container-fluid mt-5 pt-4">
         @yield('content')
     </div>
 </div>
 
-<!-- Bootstrap JS -->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Sidebar Toggle Script -->
+
 <script>
     function toggleSidebar() {
         const sidebar = document.getElementById('sidebar');
