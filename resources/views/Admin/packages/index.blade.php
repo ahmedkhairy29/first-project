@@ -43,7 +43,7 @@
 </td>
     <td>{{ $package->type }}</td>
     <td> 
-        <a href="{{ route('admin.packages.features', $package->id) }}" class="btn btn-sm btn-primary">Manage Features</a>
+        <a href="{{ route('admin.features.index', $package->id) }}" class="btn btn-primary">Manage Features</a>
 <a href="{{ route('admin.packages.edit', $package->id) }}" class="btn btn-sm btn-warning">Edit</a>
      <form action="{{ route('admin.packages.destroy', $package->id) }}" method="POST" class="d-inline">
             @csrf @method('DELETE')

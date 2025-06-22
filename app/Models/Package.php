@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\Feature;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -16,9 +17,12 @@ class Package extends Model
 }
 
     protected $fillable = [
-        'name',
-        'price',
-        'type',
-        'photo', 
-    ];
+    'name',
+    'name_ar',
+    'description',
+    'description_ar',
+    'daily',
+    'minute',
+    'type',
+];
 }

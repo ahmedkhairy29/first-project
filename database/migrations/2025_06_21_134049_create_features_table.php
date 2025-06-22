@@ -15,6 +15,10 @@ return new class extends Migration
         $table->id();
         $table->foreignId('package_id')->constrained()->onDelete('cascade');
         $table->string('name');
+        $table->string('name_ar')->nullable();
+        $table->text('description')->nullable();
+        $table->text('description_ar')->nullable();
+        $table->boolean('daily')->default(false);
         $table->boolean('is_active')->default(true);
         $table->timestamps();
     });

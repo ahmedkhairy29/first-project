@@ -9,10 +9,16 @@ class Feature extends Model
 {
     use HasFactory;
 
-    
-    public function package()
-{
-    return $this->belongsTo(Package::class);
-}
+    protected $fillable = [
+        'package_id',
+        'name',
+        'daily',
+        'minute',
+        'type',
+    ];
 
+    public function package()
+    {
+        return $this->belongsTo(Package::class);
+    }
 }
