@@ -16,9 +16,9 @@
 </a>
 
 
-<a href="#" class="nav-link">
+<a href="{{ route('admin.services.index') }}" class="nav-link">
     <i class="bi bi-list"></i>
-    <span>Services</span>
+    <span>services</span>
 </a>
 
 <a href="#" class="nav-link">

@@ -17,12 +17,6 @@ class Package extends Model
 }
 
     protected $fillable = [
-    'name',
-    'name_ar',
-    'description',
-    'description_ar',
-    'daily',
-    'minute',
-    'type',
+    'name', 'name_ar', 'price', 'photo', 'type'
 ];
 }

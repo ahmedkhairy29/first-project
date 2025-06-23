@@ -9,11 +9,20 @@ return new class extends Migration
     public function up()
 {
     Schema::table('features', function (Blueprint $table) {
-        $table->boolean('daily')->default(false);
-        $table->integer('minute')->nullable();
-        $table->string('type')->nullable();
+        if (!Schema::hasColumn('features', 'daily')) {
+            $table->boolean('daily')->default(0);
+        }
+
+        if (!Schema::hasColumn('features', 'minute')) {
+            $table->integer('minute')->nullable();
+        }
+
+        if (!Schema::hasColumn('features', 'type')) {
+            $table->string('type')->nullable();
+        }
     });
 }
+
 
 public function down()
 {

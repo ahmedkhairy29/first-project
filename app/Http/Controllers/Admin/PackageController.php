@@ -37,38 +37,40 @@ public function edit(Package $package)
 }
 
  public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'name_ar' => 'nullable|string|max:255',
-            'Description' => 'required|string|max:255',
-            'Description_ar' => 'required|string|max:255',
-            'daily' => 'nullable|string|max:255',
-            'minute' => 'nullable|integer',
-            'type' => 'required|in:free,paid',
-        ]);
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'name_ar' => 'nullable|string|max:255',
+        'price' => 'required|numeric',
+        'photo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        'type' => 'required|in:free,paid',
+    ]);
 
-        Package::create([
-            'name' => $request->name,
-            'name_ar' => $request->name_ar,
-            'Description' => $request->Description,
-            'Description_ar' => $request->description_ar,
-            'daily' => $request->daily,
-            'minute' => $request->minute,
-            'type' => $request->type,
-        ]);
+    $data = $request->only(['name', 'name_ar', 'price', 'type']);
 
-    $package->update($data);
+    if ($request->hasFile('photo')) {
+        $fileName = time() . '.' . $request->photo->extension();
+        $request->photo->move(public_path('uploads/packages'), $fileName);
+        $data['photo'] = $fileName;
+    }
 
-    return redirect()->route('admin.packages.index')->with('success', 'Package updated successfully.');
+    Package::create($data);
+
+    return redirect()->route('admin.packages.index')->with('success', 'Package created successfully.');
 }
 
 
 
-public function deleteFeature(Package $package, Feature $feature)
+
+public function destroy(Package $package)
 {
-    $feature->delete();
-    return back()->with('success', 'Feature deleted.');
+    if ($package->photo && file_exists(public_path('uploads/packages/' . $package->photo))) {
+        unlink(public_path('uploads/packages/' . $package->photo));
+    }
+
+    $package->delete();
+
+    return redirect()->route('admin.packages.index')->with('success', 'Package deleted successfully.');
 }
 
 }

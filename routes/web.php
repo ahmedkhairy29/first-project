@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\FeatureController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\User\Auth\UserLoginController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -39,9 +40,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('features/{feature}/edit', [FeatureController::class, 'edit'])->name('features.edit');
         Route::put('features/{feature}', [FeatureController::class, 'update'])->name('features.update');
         Route::delete('features/{feature}', [FeatureController::class, 'destroy'])->name('features.destroy');
+
+        Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
     });
 });
 
 
-Route::get('/user/auth/login', [UserLoginController::class, 'showLoginForm'])->name('user.login');
-Route::post('/user/auth/login', [UserLoginController::class, 'login']);
+Route::get('/user/Auth/login', [UserLoginController::class, 'showLoginForm'])->name('user.login');
+Route::post('/user/Auth/login', [UserLoginController::class, 'login']);
