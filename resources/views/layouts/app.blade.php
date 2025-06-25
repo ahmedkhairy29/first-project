@@ -20,7 +20,7 @@
 <div id="sidebar" class="sidebar collapsed">
     <div class="sidebar-header">
         <div class="d-flex align-items-center">
-            <img src="{{ asset('images/logo3.png') }}" alt="Logo" style="height: 20px;">
+            <img src="{{ asset('images/logo00.png') }}" alt="Logo" style="height: 20px;">
             <span class="logo-text ms-2">Matsync</span>
         </div>
 
@@ -34,8 +34,8 @@
     <a href="{{ route('admin.users.index') }}" class="nav-link"><i class="bi bi-people"></i> <span>Users</span></a>
     <a href="{{ route('admin.packages.index') }}" class="nav-link"><i class="bi bi-box-seam"></i><span>Packages</span></a>
     <a href="{{ route('admin.services.index') }}" class="nav-link"><i class="bi bi-list"></i><span>Services</span></a>
-    <a href="#" class="nav-link"><i class="bi bi-telephone"></i> <span>Contact Us</span></a>
-    <a href="#" class="nav-link"><i class="bi bi-gear"></i> <span>About Us</span></a>
+    <a href="{{ route('admin.contact.index') }}" class="nav-link"><i class="bi bi-telephone"></i> <span>Contact Us</span></a>
+    <a href="{{ route('admin.about') }}" class="nav-link"><i class="bi bi-gear"></i> <span>About Us</span></a>
 </div>
 
 
@@ -68,10 +68,18 @@
     </nav>
 
     
-    <div class="container-fluid mt-5 pt-4">
-        @yield('content')
+     <div class="page-wrapper">
+        <div class="page-content container-fluid mt-5 pt-4">
+            @yield('content')
+        </div>
+
+        <hr class="m-0">
+        <footer class="text-start text-muted small py-3 border-top ms-3">
+            2025 © Matsync.
+        </footer>
     </div>
-</div>
+
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

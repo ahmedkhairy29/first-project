@@ -1,21 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container-fluid mt-4">
-
-    <h4 class="mb-4">Packages</h4>
-    <div class="d-flex justify-content-end mb-2">
+<div class="card shadow-sm">
+    
+    <div class="d-flex justify-content-between align-items-center px-3 pt-3">
+        <h5 class="mb-0">Packages</h5>
         <a href="{{ route('admin.packages.create') }}" class="btn btn-success">+ Create New Package</a>
     </div>
-<div class="d-flex justify-content-end mb-3 align-items-center">
-    <form method="GET" action="{{ route('admin.packages.index') }}" class="d-flex align-items-center" style="gap: 8px;">
-        <label for="search" class="fw-bold mb-0">Search:</label>
-        <input type="text" id="search" name="search"
-               value="{{ old('search', '') }}"
-               class="form-control form-control-sm"
-               style="width: 150px;" placeholder="">
-    </form>
-</div>
+
+    
+    <hr class="my-2">
+
+   
+    <div class="d-flex justify-content-end mb-2 px-3">
+        <form method="GET" action="{{ route('admin.packages.index') }}" class="d-flex align-items-center" style="gap: 8px;">
+            <label for="search" class="fw-bold mb-0">Search:</label>
+            <input type="text" id="search" name="search"
+                   value="{{ old('search', '') }}"
+                   class="form-control form-control-sm"
+                   style="width: 150px;" placeholder="">
+        </form>
+    </div>
     <table class="table table-bordered w-100 me-auto">
 
         <thead>
@@ -56,8 +61,14 @@
             @endforelse
         </tbody>
     </table>
-    <div class="d-flex justify-content-center">
-    {{ $packages->withQueryString()->links() }}
+   <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top">
+    <div class="text-muted small">
+        Showing {{ $packages->firstItem() }} to {{ $packages->lastItem() }} of {{ $packages->total() }} entries
+    </div>
+    <div>
+        {{ $packages->withQueryString()->links('pagination::bootstrap-5') }}
+
+    </div>
 </div>
 
 </div>

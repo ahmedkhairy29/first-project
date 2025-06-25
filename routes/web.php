@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\FeatureController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\User\Auth\UserLoginController;
+use App\Http\Controllers\Admin\ContactController;
 
 Route::prefix('admin')->name('admin.')->group(function () {
 
@@ -20,6 +21,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('login', [AdminLoginController::class, 'showLoginForm'])->name('login');
     Route::post('login', [AdminLoginController::class, 'login']);
     Route::post('logout', [AdminLoginController::class, 'logout'])->name('logout');
+    
 
    
     Route::middleware('auth:admin')->group(function () {
@@ -41,7 +43,15 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('features/{feature}', [FeatureController::class, 'update'])->name('features.update');
         Route::delete('features/{feature}', [FeatureController::class, 'destroy'])->name('features.destroy');
 
-        Route::resource('services', \App\Http\Controllers\Admin\ServiceController::class);
+        Route::resource('services', ServiceController::class);
+
+        
+        Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+
+        Route::get('/about', function () {
+            return view('admin.pages.about');
+        })->name('about');
+        
     });
 });
 

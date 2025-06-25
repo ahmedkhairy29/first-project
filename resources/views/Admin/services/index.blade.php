@@ -19,8 +19,7 @@
                style="width: 150px;" placeholder="">
     </form>
 </div>
-
-    <div class="card-body p-0">
+     <div class="card-body p-0">
         @if(session('success'))
             <div class="alert alert-success m-3">
                 {{ session('success') }}
@@ -28,38 +27,43 @@
         @endif
 
         <div class="table-responsive">
-            <table class="table table-hover table-bordered mb-0">
-                <thead class="table-light">
-                    <tr>
-                        
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @forelse ($services as $index => $service)
-                        <tr>
-                            
-                            <td>{{ $service->title }}</td>
-                            <td>{{ $service->description }}</td>
-                            <td>
-                                <a href="{{ route('admin.services.edit', $service->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                </a>
-                                <form action="{{ route('admin.services.destroy', $service->id) }}" method="POST" class="d-inline">
-                                    @csrf @method('DELETE')
-            <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this package?')">Delete</button>
-        </form>
-                            </td>
-                        </tr>
-                    @empty
-                        <tr>
-                            <td colspan="4" class="text-center py-3">No services found.</td>
-                        </tr>
-                    @endforelse
-                </tbody>
-            </table>
-        </div>
+           <table class="table table-hover table-bordered mb-0">
+    <thead class="table-light">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @forelse ($services as $service)
+            <tr>
+                <td>{{ $service->title_en }}</td>
+                <td>{{ $service->description_en }}</td>
+                <td>
+                    <a href="{{ route('admin.services.edit', $service->id) }}" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="{{ route('admin.services.destroy', $service->id) }}" method="POST" class="d-inline">
+                        @csrf @method('DELETE')
+                        <button class="btn btn-sm btn-danger" onclick="return confirm('Delete this service?')">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        @empty
+            <tr>
+                <td colspan="3" class="text-center py-3">No services found.</td>
+            </tr>
+        @endforelse
+    </tbody>
+</table>
+<div class="d-flex justify-content-between align-items-center px-3 py-2 border-top">
+    <div class="text-muted small">
+        Showing {{ $services->firstItem() }} to {{ $services->lastItem() }} of {{ $services->total() }} entries
+    </div>
+    <div>
+        {{ $services->withQueryString()->links('pagination::bootstrap-5') }}
+    </div>
+</div>
+       </div>
     </div>
 </div>
 @endsection

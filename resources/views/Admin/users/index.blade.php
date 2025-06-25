@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-4">
+<div class="card shadow-sm">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h4 class="mb-0">Users</h4>
+        <h4 class="mb-0 ms-3">Users</h4>
+
         <a href="{{ route('admin.users.create') }}" class="btn btn-primary">Add User</a>
     </div>
 
@@ -43,6 +44,14 @@
                 @endforelse
             </tbody>
         </table>
+        <div class="d-flex justify-content-between align-items-center px-3 py-2 border-top">
+    <div class="text-muted small">
+        Showing {{ $users->firstItem() }} to {{ $users->lastItem() }} of {{ $users->total() }} entries
+    </div>
+    <div>
+        {{ $users->withQueryString()->links('pagination::bootstrap-5') }}
+    </div>
+</div>
     </div>
 </div>
 @endsection

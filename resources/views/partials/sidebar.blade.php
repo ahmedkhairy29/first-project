@@ -21,12 +21,12 @@
     <span>services</span>
 </a>
 
-<a href="#" class="nav-link">
+<a href="{{ route('admin.pages.contact') }}" class="nav-link">
     <i class="bi bi-telephone"></i>
     <span>Contact Us</span>
 </a>
 
-<a href="#" class="nav-link">
+<a href="{{ route('admin.pages.about') }}" class="nav-link">
     <i class="bi bi-gear"></i>
     <span>About Us</span>
 </a>
